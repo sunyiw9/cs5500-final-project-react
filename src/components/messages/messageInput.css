@@ -1,0 +1,12 @@
+.picker-container {
+    position: relative;
+}
+
+.emoji-icon {
+    cursor: pointer;
+}
+
+.input-style {
+    width: calc(100% - 45px);
+    margin-bottom: 5px;
+}

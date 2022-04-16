@@ -1,0 +1,11 @@
+.scroll-bg {
+    width: 400px;
+    margin: 5% auto;
+}
+
+.scroll-div {
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    overflow-y: scroll;
+}

@@ -16,6 +16,10 @@ export const findAllMessagesBetweenUsers = (uid, uid2) =>
     axios.get(`${USERS_API}/${uid}/messages/${uid2}`)
         .then(response => response.data);
 
+export const deleteOneMessage = (mid) =>
+    axios.delete(`${Messages_API}/${mid}`)
+        .then(response => response.data);
+
 const service = {
     sendMessage,
     findAllMessagesBetweenUsers
