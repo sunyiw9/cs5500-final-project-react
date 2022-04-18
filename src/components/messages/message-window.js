@@ -40,6 +40,9 @@ const MessageWindow = ({user, selectedUser}) => {
 
     return (
         <div className="scroll-bg">
+            <div className="ttr-twitter-message-window-username">
+                {selectedUser.username}
+            </div>
             <div className="scroll-div">
             {
                 messages &&

@@ -2,8 +2,14 @@ import React from "react"
 import {default as UserMessageButton} from './userMessageButton';
 import "./user.css"
 const User = ({user, deleteUser, handleOnUserSelected}) =>{
+
+    const handleOnUserClicked = (e) => {
+        e.stopPropagation()
+        e.preventDefault()
+        handleOnUserSelected(user)
+    }
     return(
-        <div className='ttr-messages-user'>
+        <div className='ttr-messages-user' onClick={handleOnUserClicked}>
             <div>
                 {
                     user.username &&
@@ -14,11 +20,13 @@ const User = ({user, deleteUser, handleOnUserSelected}) =>{
             <span className = "ttr-messages-username">
                     {user.username}
             </span>
-            <UserMessageButton
-                    user={user}
-                    handleOnUserSelected={handleOnUserSelected}>
-                    Chat
-            </UserMessageButton>
+            <span>
+            {/*<UserMessageButton*/}
+            {/*        user={user}*/}
+            {/*        handleOnUserSelected={handleOnUserSelected}>*/}
+            {/*        Chat*/}
+            {/*</UserMessageButton>*/}
+                </span>
         </div>
 
     );

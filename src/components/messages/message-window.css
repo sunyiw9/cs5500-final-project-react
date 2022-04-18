@@ -9,3 +9,15 @@
     overflow: hidden;
     overflow-y: scroll;
 }
+
+.ttr-message-window{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-left:20px
+}
+
+.ttr-twitter-message-window-username{
+    font-size: 20px;
+    font-weight: bold;
+}
