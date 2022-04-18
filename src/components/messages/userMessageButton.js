@@ -13,7 +13,7 @@ const UserMessageButton = ({user, handleOnUserSelected}) =>{
     }
 
     return(
-        <button onClick={handleOnUserClicked}>Chat</button>
+        <button className ="ttr-messages-button"onClick={handleOnUserClicked}>Chat</button>
     );
 }
 

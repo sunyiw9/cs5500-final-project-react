@@ -6,7 +6,6 @@ import MessageWindow from "./message-window";
 import MessageInput from "./messageInput";
 
 
-
 const Users = ({profile, users = [], refreshUsers}) => {
     const deleteUser =(uid) =>
         userService.deleteUser(uid)
