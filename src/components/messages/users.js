@@ -5,6 +5,7 @@ import * as userService from "../../services/users-service";
 import "./message-window.css"
 import MessageWindow from "./message-window";
 import MessageInput from "./messageInput";
+import "./user.css"
 
 
 const Users = ({profile, users = [], refreshUsers}) => {
