@@ -1,7 +1,19 @@
-.tuiter-message{
+.ttr-message-1{
+    max-width: 50%;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: grey;
+}
+
+.ttr-message-2{
     max-width: 50%;
     color: white;
     padding: 10px;
     border-radius: 10px;
     background-color: blue;
+}
+
+.push-right{
+    margin-left: auto;
 }
