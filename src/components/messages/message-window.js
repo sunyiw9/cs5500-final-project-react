@@ -2,8 +2,10 @@ import {default as MessageLine} from './messageLine';
 import {useEffect, useRef, useState} from "react";
 import * as messageService from "../../services/message-service";
 import "./message-window.css";
+import * as securityService from "../../services/security-service";
 
 const MessageWindow = ({user, selectedUser}) => {
+
 
     const [messages, setMessages] = useState([]);
     const scrollRef = useRef();
@@ -19,6 +21,7 @@ const MessageWindow = ({user, selectedUser}) => {
         messageService.deleteOneMessage(mid)
             .then(fetchMessage)
     };
+
 
     // fetch initial message
     useEffect(() => {
@@ -53,7 +56,8 @@ const MessageWindow = ({user, selectedUser}) => {
                                      sentOn={message.sentOn}
                                      refreshMessage={deleteOneMessage}
                                      mid={message}
-                                     key={message._id}/>
+                                     key={message._id}
+                                     userName1={user.username}/>
                     </div>
                     ))
             }

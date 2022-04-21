@@ -35,7 +35,7 @@ const Messages = () => {
             securityService.profile()
                 .then((user) => {
 
-                    console.log(user)
+                    //console.log(user)
                     if (user) {
                         setProfile(user);
                     }
