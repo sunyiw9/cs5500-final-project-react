@@ -6,10 +6,12 @@ import TuitsAndReplies from "./tuits-and-replies";
 import Media from "./media";
 import MyLikes from "./my-likes";
 import MyDislikes from "./my-dislikes";
+
 const Profile = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [profile, setProfile] = useState({});
+
   useEffect(async () => {
     try {
       const user = await service.profile();
@@ -18,6 +20,7 @@ const Profile = () => {
       navigate('/login');
     }
   }, []);
+
   const logout = () => {
     service.logout()
         .then(() => navigate('/login'));

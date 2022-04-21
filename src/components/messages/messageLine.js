@@ -3,6 +3,7 @@
  */
 import * as messageService from "../../services/message-service";
 import React from "react";
+import "./messageLine.css"
 
 const MessageLine = ({userName, message, sentOn, refreshMessage, mid}) => {
     const time = new Date(sentOn).toLocaleString();
@@ -17,7 +18,7 @@ const MessageLine = ({userName, message, sentOn, refreshMessage, mid}) => {
             <div>{userName} {time}
             <i onClick={() => refreshMessage(mid._id)} className="fas fa-remove fa-1x fa-pull-right"></i>
             </div>
-            <div>{message}</div>
+            <div className = "tuiter-message">{message}</div>
         </div>
     )
 }
