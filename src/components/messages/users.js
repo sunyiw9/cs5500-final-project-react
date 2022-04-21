@@ -2,9 +2,10 @@ import React from "react";
 import {useEffect, useState} from "react";
 import User from "./user";
 import * as userService from "../../services/users-service";
+import "./message-window.css"
 import MessageWindow from "./message-window";
 import MessageInput from "./messageInput";
-
+import "./user.css"
 
 
 const Users = ({profile, users = [], refreshUsers}) => {
@@ -29,7 +30,7 @@ const Users = ({profile, users = [], refreshUsers}) => {
                                                />)
                 }
             </ul>
-            <div style={{display:'flex', flexDirection: 'column', flexGrow: '1'}}>
+            <div className= "ttr-message-window">
                 {selectedUser &&
                  <MessageWindow user={profile} selectedUser={selectedUser} />
                 }

@@ -1,5 +1,5 @@
 import React from "react"
-
+import "./user.css"
 /**
  * Customized button to handle the message
  *
@@ -13,8 +13,9 @@ const UserMessageButton = ({user, handleOnUserSelected}) =>{
     }
 
     return(
-        <button onClick={handleOnUserClicked}>Chat</button>
+        <button className ="ttr-messages-button"onClick={handleOnUserClicked}>Chat</button>
     );
+
 }
 
 export default UserMessageButton;
