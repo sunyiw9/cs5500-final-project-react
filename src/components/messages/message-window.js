@@ -1,11 +1,11 @@
 import {default as MessageLine} from './messageLine';
 import {useEffect, useRef, useState} from "react";
 import * as messageService from "../../services/message-service";
+import * as bookmarkService from "../../services/bookmarks-service";
 import "./message-window.css";
 import * as securityService from "../../services/security-service";
 
 const MessageWindow = ({user, selectedUser}) => {
-
 
     const [messages, setMessages] = useState([]);
     const scrollRef = useRef();
@@ -22,6 +22,13 @@ const MessageWindow = ({user, selectedUser}) => {
             .then(fetchMessage)
     };
 
+    const bookmarkMessage = (mid) => {
+        bookmarkService.userBookmarksMessage(user._id, mid)
+            .then(fetchMessage)
+            .catch(e => {
+                console.error(e)
+            })
+    }
 
     // fetch initial message
     useEffect(() => {
@@ -50,14 +57,14 @@ const MessageWindow = ({user, selectedUser}) => {
             {
                 messages &&
                 messages.map((message) => (
-                    <div ref={scrollRef}>
+                    <div ref={scrollRef} key={message._id}>
                         <MessageLine userName={((message || {}).from || {}).username}
                                      message={message.message}
                                      sentOn={message.sentOn}
                                      refreshMessage={deleteOneMessage}
                                      mid={message}
-                                     key={message._id}
-                                     userName1={user.username}/>
+                                     userName1={user.username}
+                                     bookmarkMessage={bookmarkMessage}/>
                     </div>
                     ))
             }

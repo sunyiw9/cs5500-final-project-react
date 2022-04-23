@@ -6,7 +6,7 @@ import "./messageInput.css";
 
 const MessageInput = ({user, selectedUser}) => {
 
-    const [message, setMessage] = useState(null);
+    const [message, setMessage] = useState('');
     const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
     const sendMessage = () => {
