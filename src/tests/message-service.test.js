@@ -1,4 +1,6 @@
-
+/**
+ * @jest-environment node
+ */
 import{
     sendMessage,findAllMessagesBetweenUsers,deleteOneMessage
 }from "../services/message-service";
