@@ -9,7 +9,7 @@ const MyBookmarkedMessages = () =>{
             .then((messages) => setBookmarkMessages(messages));
     useEffect(findBookmarkedMessage , []);
     return(
-        <div>
+        <div className='ttr-bookmarks-screen'>
             <BookmarkedMessages messages ={bookmarkMessages}
             refreshMessages ={findBookmarkedMessage}/>
         </div>
