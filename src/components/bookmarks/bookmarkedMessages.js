@@ -1,7 +1,7 @@
 import BookmarkedMessage from "./bookmarkedMessage";
 import React from "react";
 import * as service from "../../services/bookmarks-service"
-
+import "./message-bookmark.css"
 const BookmarkedMessages =({messages=[], refreshMessages}) => {
     // const bookmarkMessage =(message) =>{
     //     service.userBookmarksMessage("me", message._id)
