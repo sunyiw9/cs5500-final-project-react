@@ -1,0 +1,15 @@
+.ttr-bookmarks-message{
+    /*border: 1px grey solid;*/
+/**/
+    padding:10px;
+
+}
+.ttr-bookmarks-message-content{
+    background-color:lightgrey;
+    border-radius: 10px;
+}
+
+.ttr-bookmarks-type{
+    display:flex;
+    flex-direction: row;
+}
