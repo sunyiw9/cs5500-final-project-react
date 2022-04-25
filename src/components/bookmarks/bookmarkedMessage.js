@@ -3,12 +3,14 @@ import React from "react";
 import "./message-bookmark.css"
 const BookmarkedMessage = ({message}) =>{
     return(
-        <li className='ttr-bookmarks-message'>
-            <div>From: {message.from.username}</div>
-            <div>To:{message.to.username}</div>
-            <div>Sent On: {message.sentOn}</div>
-            <div>Content: {message.message}</div>
-        </li>
+        <div className='ttr-bookmarks-message'>
+            <div className='ttr-bookmarks-message-content'>
+            <div> From: {message.from.username}</div>
+            <div> To:{message.to.username}</div>
+            <div> Sent On: {message.sentOn}</div>
+            <div> Content: {message.message}</div>
+            </div>
+        </div>
     )
 }
 

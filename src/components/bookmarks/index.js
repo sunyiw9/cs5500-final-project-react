@@ -7,16 +7,17 @@ function Bookmarks () {
   return(
     <div>
         <h1>Bookmarks Screen</h1>
+        <span className = "ttr-bookmarks-type">
         <Link to="/bookmarks/tuits"
               className="nav-link">
             Tuits</Link>
         <Link to="/bookmarks/messages"
                 className="nav-link">
               Messages</Link>
-        <Link to="/bookmarks/news"
-              className="nav-link">
-            News</Link>
-
+        {/*<Link to="/bookmarks/news"*/}
+        {/*      className="nav-link">*/}
+        {/*    News</Link>*/}
+            </span>
 
       <Routes>
           <Route path="/messages" element ={<MyBookmarkedMessages/>}/>

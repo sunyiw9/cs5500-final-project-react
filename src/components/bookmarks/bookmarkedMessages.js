@@ -9,7 +9,7 @@ const BookmarkedMessages =({messages=[], refreshMessages}) => {
     //         .catch(e => alert(e))
     // }
 return (
-    <ul className="ttr-messages list-group align-items-start" style={{paddingTop: '10px', borderRadius: '0px'}}>
+    <div>
         {
             messages.map && messages.map(message =>
                 <BookmarkedMessage
@@ -17,7 +17,7 @@ return (
                     message={message}
                 />)
         }
-    </ul>
+    </div>
 )
 }
 
