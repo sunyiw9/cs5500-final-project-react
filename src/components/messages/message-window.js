@@ -1,6 +1,7 @@
 import {default as MessageLine} from './messageLine';
 import {useEffect, useRef, useState} from "react";
 import * as messageService from "../../services/message-service";
+import * as bookmarkService from "../../services/bookmarks-service";
 import "./message-window.css";
 
 const MessageWindow = ({user, selectedUser}) => {
@@ -19,6 +20,14 @@ const MessageWindow = ({user, selectedUser}) => {
         messageService.deleteOneMessage(mid)
             .then(fetchMessage)
     };
+
+    const bookmarkMessage = (mid) => {
+        bookmarkService.userBookmarksMessage(user._id, mid)
+            .then(fetchMessage)
+            .catch(e => {
+                console.error(e)
+            })
+    }
 
     // fetch initial message
     useEffect(() => {
@@ -53,7 +62,8 @@ const MessageWindow = ({user, selectedUser}) => {
                                      sentOn={message.sentOn}
                                      refreshMessage={deleteOneMessage}
                                      mid={message}
-                                     key={message._id}/>
+                                     key={message._id}
+                                    bookmarkMessage={bookmarkMessage}/>
                     </div>
                     ))
             }
