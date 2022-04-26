@@ -1,3 +1,6 @@
+/**
+ * @file Component renders message window and users list
+ */
 import React from "react";
 import Users from "./users";
 import * as userService from "../../services/users-service"
