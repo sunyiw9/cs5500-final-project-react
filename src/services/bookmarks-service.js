@@ -13,6 +13,7 @@ const api = axios.create({
     withCredentials: true
 });
 
+
 /**
  * Use GET method to retrieve all bookmarked message by a user
  * @param userId User's primary key
@@ -30,6 +31,7 @@ export const findAllMessagesBookmarkedByUser = (userId) =>
 export const findAllUsersThatBookmarkedMessage = (mid) =>
     api.get(`${Messages_API}/${mid}/bookmarks`)
         .then(response => response.data);
+
 
 /**
  * Use PUT method to insert a new instance of user bookmarks a message
