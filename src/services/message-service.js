@@ -43,7 +43,8 @@ export const deleteOneMessage = (mid) =>
 
 const service = {
     sendMessage,
-    findAllMessagesBetweenUsers
+    findAllMessagesBetweenUsers,
+    deleteOneMessage
 }
 
 export default service;

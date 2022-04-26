@@ -1,5 +1,5 @@
 /**
- * Component renders each single line of the message
+ * @file Component renders each single line of the message
  */
 import * as messageService from "../../services/message-service";
 import React, {useEffect, useState} from "react";
