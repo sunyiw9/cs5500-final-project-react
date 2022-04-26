@@ -1,3 +1,7 @@
+/**
+ * @file Implements Bookmark screen
+ */
+
 import React from "react";
 import MyBookmarkedMessages from "./my-bookmarked-message-screen";
 import * as service from "../../services/bookmarks-service"

@@ -1,6 +1,16 @@
+/**
+ * @file Implements a bookmarked Message instance in the Bookmark screen
+ */
+
 import React from "react";
-// import {useNavigate, Link} from "react-router-dom";
 import "./message-bookmark.css"
+
+/**
+ * Implements single bookmarked message component for bookmarked message screen
+ * @param message The bookmarked message
+ * @returns {JSX.Element} Single instance of bookmarked message
+ * @constructor
+ */
 const BookmarkedMessage = ({message}) =>{
     return(
         <div className='ttr-bookmarks-message'>
