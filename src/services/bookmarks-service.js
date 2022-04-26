@@ -7,6 +7,7 @@ import axios from "axios";
 const BASE_URL = process.env.REACT_APP_BASE_URL;
 const USERS_API = `${BASE_URL}/api/users`;
 const Messages_API = `${BASE_URL}/api/messages`;
+const Bookmarks_API = `${BASE_URL}/api/bookmarks`;
 
 
 const api = axios.create({
@@ -41,4 +42,8 @@ export const findAllUsersThatBookmarkedMessage = (mid) =>
  */
 export const userBookmarksMessage = (uid, mid) =>
     api.put(`${USERS_API}/${uid}/bookmarks/${mid}`)
+        .then(response => response.data);
+
+export const findBookmarkByUserAndMessage = (uid, mid) =>
+    api.get(`${Bookmarks_API}/users/${uid}/messages/${mid}`)
         .then(response => response.data);

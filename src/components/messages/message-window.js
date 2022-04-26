@@ -8,6 +8,7 @@ import * as securityService from "../../services/security-service";
 const MessageWindow = ({user, selectedUser}) => {
 
     const [messages, setMessages] = useState([]);
+
     const scrollRef = useRef();
 
     const fetchMessage = () => {
@@ -23,11 +24,12 @@ const MessageWindow = ({user, selectedUser}) => {
     };
 
     const bookmarkMessage = (mid) => {
-        bookmarkService.userBookmarksMessage(user._id, mid)
-            .then(fetchMessage)
-            .catch(e => {
-                console.error(e)
-            })
+        return bookmarkService.userBookmarksMessage(user._id, mid)
+    }
+
+    const fetchMessageBookmark = (mid) => {
+        console.log('gg==>', mid)
+        return bookmarkService.findBookmarkByUserAndMessage(user._id, mid)
     }
 
     // fetch initial message
@@ -64,7 +66,9 @@ const MessageWindow = ({user, selectedUser}) => {
                                      refreshMessage={deleteOneMessage}
                                      mid={message}
                                      userName1={user.username}
-                                     bookmarkMessage={bookmarkMessage}/>
+                                     bookmarkMessage={bookmarkMessage}
+                                     fetchMessageBookmark={fetchMessageBookmark}
+                        />
                     </div>
                     ))
             }
