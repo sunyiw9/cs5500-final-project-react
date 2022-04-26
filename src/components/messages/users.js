@@ -1,3 +1,6 @@
+/**
+ * @file Implements all contactable users in the message screen
+ */
 import React from "react";
 import {useEffect, useState} from "react";
 import User from "./user";
@@ -7,7 +10,12 @@ import MessageWindow from "./message-window";
 import MessageInput from "./messageInput";
 import "./user.css"
 
-
+/**
+ * Implements a list of contactable users
+ * @param users All contactable users
+ * @returns {JSX.Element} A list of contactable users
+ * @constructor
+ */
 const Users = ({profile, users = [], refreshUsers}) => {
     const deleteUser =(uid) =>
         userService.deleteUser(uid)

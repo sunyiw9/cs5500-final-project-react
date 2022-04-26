@@ -1,6 +1,17 @@
+/**
+ * @file Implements a contactable user instance in the message screen
+ */
+
 import React from "react"
 import {default as UserMessageButton} from './userMessageButton';
 import "./user.css"
+
+/**
+ * Implements a contact user instance
+ * @param user Contactable user
+ * @returns {JSX.Element} Single instance of contactable user
+ * @constructor
+ */
 const User = ({user, deleteUser, handleOnUserSelected}) =>{
 
     const handleOnUserClicked = (e) => {
