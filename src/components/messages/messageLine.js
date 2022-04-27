@@ -9,21 +9,24 @@ import {findBookmarkByUserAndMessage} from "../../services/bookmarks-service";
 const MessageLine = ({userName, message, sentOn, refreshMessage, mid, userName1, bookmarkMessage = () => {}, fetchMessageBookmark}) => {
     const time = new Date(sentOn).toLocaleString();
 
-   useEffect(() => {
+    // This in the beginning, return bookmarks when this message is bookmarked
+    // return false if this message is not bookmarked
+    useEffect(() => {
        fetchMessageBookmark(mid._id).then(res => {
-           console.log('ressssbb ij useff==>>', res);
            if (res) {
                setBookmarks(true);
            } else {
                setBookmarks(false);
            }
        }).catch(err => {
-           console.log('errrr in usefff==>>', err);
+           console.log('error:', err);
        });
-   },[]);
+    },[]);
 
     const [bookmarks, setBookmarks] = useState(false);
 
+    // When clicking, first, inserts message into user's bookmarks collection (or delete it)
+    // Then, check if this message is bookmarked (if it is created)
     const bookmarkHandle = (mid) => {
         bookmarkMessage(mid).then(res => {
             if (res === 'Created') {
@@ -32,7 +35,7 @@ const MessageLine = ({userName, message, sentOn, refreshMessage, mid, userName1,
                 setBookmarks(false);
             }
         }).catch(err => {
-            console.log('errrr==>>', err);
+            console.log('error:', err);
         });
     }
 

@@ -28,7 +28,6 @@ const MessageWindow = ({user, selectedUser}) => {
     }
 
     const fetchMessageBookmark = (mid) => {
-        console.log('gg==>', mid)
         return bookmarkService.findBookmarkByUserAndMessage(user._id, mid)
     }
 

@@ -44,6 +44,13 @@ export const userBookmarksMessage = (uid, mid) =>
     api.put(`${USERS_API}/${uid}/bookmarks/${mid}`)
         .then(response => response.data);
 
+/**
+ * Use GET method to retrieve a message from this user's bookmarks collection (and
+ * the purpose is check if this message is in the bookmarks collection)
+ * @param uid User's primary key
+ * @param mid Message's primary key
+ * @returns {Promise<AxiosResponse<any>>} JSON file of a bookmarked message
+ */
 export const findBookmarkByUserAndMessage = (uid, mid) =>
     api.get(`${Bookmarks_API}/users/${uid}/messages/${mid}`)
         .then(response => response.data);
