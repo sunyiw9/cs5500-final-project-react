@@ -5,9 +5,28 @@
 import React from "react";
 import MyBookmarkedMessages from "./my-bookmarked-message-screen";
 import * as service from "../../services/bookmarks-service"
+import * as securityService from "../../services/security-service";
+
 import {useEffect, useState} from "react";
 import {Link, Route, Routes, useNavigate} from "react-router-dom";
 function Bookmarks () {
+
+
+    const navigate = useNavigate();
+
+    const [profile, setProfile] = useState({});
+
+    // If user is not logged in, the user will be redirected to login page
+    useEffect(async () => {
+        try {
+            const user = await securityService.profile();
+            setProfile(user);
+        } catch (e) {
+            navigate('/login');
+        }
+    }, []);
+
+
   return(
     <div>
         <h1>Bookmarks Screen</h1>
