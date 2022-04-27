@@ -1,3 +1,6 @@
+/**
+ * @file Component renders message window for each selected user
+ */
 import {default as MessageLine} from './messageLine';
 import {useEffect, useRef, useState} from "react";
 import * as messageService from "../../services/message-service";

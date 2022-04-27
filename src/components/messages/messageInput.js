@@ -1,3 +1,6 @@
+/**
+ * @file Component renders input box for the message typing and emoji picker
+ */
 import {default as MessageLine} from './messageLine';
 import {useEffect, useState} from "react";
 import * as messageService from "../../services/message-service";
